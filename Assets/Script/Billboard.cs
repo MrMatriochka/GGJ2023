@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class Billboard : MonoBehaviour
 {
-    public Transform camera;
+    public Transform cam;
+    public GameObject camObj;
     public GameObject player;
     private Vector3 distance;
     public Vector3 offset;
-    private void Start()
+    
+    private void Awake()
     {
         distance =  transform.position - player.transform.position;
+        camObj = GameObject.FindWithTag("MainCamera");
+        cam = camObj.transform;
     }
     void Update()
     {
@@ -19,6 +23,6 @@ public class Billboard : MonoBehaviour
     }
     private void LateUpdate()
     {
-        transform.LookAt(transform.position + camera.forward);
+        transform.LookAt(transform.position + cam.forward);
     }
 }

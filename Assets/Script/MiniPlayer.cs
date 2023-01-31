@@ -15,10 +15,15 @@ public class MiniPlayer : MonoBehaviour
     bool canSlingshot;
     bool canFusion;
     public int index;
+
+    public GameObject sizeBarObj;
+    private SizeBar sizeBar;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine(Initialize());
+        sizeBar = sizeBarObj.GetComponent<SizeBar>();
+        sizeBar.SetMaxSize(15);
     }
 
     private void Update()
@@ -26,7 +31,7 @@ public class MiniPlayer : MonoBehaviour
         size = transform.childCount + 1;
         gangraine = transform.childCount + 1;
         transform.localScale = Vector3.one * size;
-
+        sizeBar.SetSize(size);
 
         //slingShot
         if (Input.GetMouseButtonDown(0))
@@ -74,7 +79,7 @@ public class MiniPlayer : MonoBehaviour
                 int iterrationNb = transform.childCount;
                 for (int i = 0; i < iterrationNb; i++)
                 {
-                    transform.GetChild(0).parent = collision.collider.transform;
+                    transform.GetChild(1).parent = collision.collider.transform;
                 }
 
                 Destroy(gameObject);

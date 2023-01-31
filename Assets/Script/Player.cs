@@ -16,9 +16,15 @@ public class Player : MonoBehaviour
 
     public GameObject miniPlayer;
     int miniPlayerIndex = 0;
+    
+    public GameObject sizeBarObj;
+    private SizeBar sizeBar;
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sizeBar = sizeBarObj.GetComponent<SizeBar>();
+        sizeBar.SetMaxSize(15);
     }
 
     private void Update()
@@ -26,7 +32,7 @@ public class Player : MonoBehaviour
         size = transform.childCount+1;
         gangraine = transform.childCount + 1;
         transform.localScale = Vector3.one * size;
-
+        sizeBar.SetSize(size);
 
         //slingShot
         if (Input.GetMouseButtonDown(0))
@@ -57,7 +63,7 @@ public class Player : MonoBehaviour
                 int iterrationNb = Mathf.RoundToInt(transform.childCount / 2);
                 for (int i = 0; i < iterrationNb; i++)
                 {
-                    transform.GetChild(0).parent = splitedObject.transform;
+                    transform.GetChild(1).parent = splitedObject.transform;
                 }
             }
             canSlingshot = false;

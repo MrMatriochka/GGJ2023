@@ -7,27 +7,27 @@ using UnityEngine.UI;
 public class SizeBar : MonoBehaviour
 {
     public Slider slider;
-    public int maxSize;
-    public int actualSize;
+    // public int maxSize;
+    // public int actualSize;
 
-    private void Start()
-    {
-        SetMaxSize(maxSize);
-    }
+    // private void Start()
+    // {
+    //     SetMaxSize(maxSize);
+    // }
 
-    public void SetMaxSize(int size)
+    public void SetMaxSize(float size)
     {
         slider.maxValue = size;
-        slider.value = actualSize;
+        slider.value = size;
     }
 
-    private void SetSize(int size)
+    public void SetSize(float size)
     {
         slider.value = size;
     }
 
-    private void Update()
-    {
-        SetSize(actualSize);
-    }
+    // private void Update()
+    // {
+    //     SetSize(actualSize);
+    // }
 }
