@@ -8,14 +8,14 @@ public class Peon : MonoBehaviour
     Player player;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if(other.CompareTag("Player") || other.CompareTag("MiniPlayer"))
         {
             player = other.GetComponent<Player>();
             GetComponent<Renderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
 
             transform.parent = other.transform;
-            StartCoroutine(Gangraine());
+            //StartCoroutine(Gangraine());
         }
     }
 
