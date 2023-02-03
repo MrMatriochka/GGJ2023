@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        size = transform.childCount+1;
-        gangraine = transform.childCount + 1;
+        size = transform.childCount;
+        gangraine = transform.childCount;
         transform.localScale = Vector3.one * size;
         sizeBar.SetSize(size);
 
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Mouse0) )
         {
-            if(transform.childCount > 1 && canSlingshot)
+            if(transform.childCount > 2 && canSlingshot)
             {
                 endSlingshot = Input.mousePosition;
                 Vector3 movement = new Vector3(startSlingshot.x - endSlingshot.x, 0.0f, startSlingshot.y - endSlingshot.y);
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
                 splitedObject.GetComponent<MiniPlayer>().index = miniPlayerIndex;
                 miniPlayerIndex++;
 
-                int iterrationNb = Mathf.RoundToInt(transform.childCount / 2);
+                int iterrationNb = Mathf.RoundToInt((transform.childCount-1) / 2);
                 for (int i = 0; i < iterrationNb; i++)
                 {
                     transform.GetChild(1).parent = splitedObject.transform;

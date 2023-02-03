@@ -28,8 +28,8 @@ public class MiniPlayer : MonoBehaviour
 
     private void Update()
     {
-        size = transform.childCount + 1;
-        gangraine = transform.childCount + 1;
+        size = transform.childCount;
+        gangraine = transform.childCount;
         transform.localScale = Vector3.one * size;
         sizeBar.SetSize(size);
 
@@ -65,10 +65,10 @@ public class MiniPlayer : MonoBehaviour
         {
             if (collision.collider.CompareTag("Player"))
             {
-                int iterrationNb = transform.childCount;
+                int iterrationNb = transform.childCount-1;
                 for (int i = 0; i < iterrationNb; i++)
                 {
-                    transform.GetChild(0).parent = collision.collider.transform;
+                    transform.GetChild(1).parent = collision.collider.transform;
                 }
 
                 Destroy(gameObject);
@@ -76,7 +76,7 @@ public class MiniPlayer : MonoBehaviour
 
             if (collision.collider.CompareTag("MiniPlayer") && index > collision.gameObject.GetComponent<MiniPlayer>().index)
             {
-                int iterrationNb = transform.childCount;
+                int iterrationNb = transform.childCount-1;
                 for (int i = 0; i < iterrationNb; i++)
                 {
                     transform.GetChild(1).parent = collision.collider.transform;
