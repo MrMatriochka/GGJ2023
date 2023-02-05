@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Peon : MonoBehaviour
 {
+    public List<Material> matList = new List<Material>();
+
     public float baseDeathTime;
     Player player;
 
@@ -25,6 +27,8 @@ public class Peon : MonoBehaviour
         animator = transform.GetChild(0).GetComponent<Animator>();
         agent.speed = moveSpeed;
         agent.SetDestination(RandomNavMeshLocation());
+
+        transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material = matList[Random.Range(0,matList.Count)];
     }
 
     private void Update()
