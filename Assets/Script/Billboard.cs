@@ -8,6 +8,7 @@ public class Billboard : MonoBehaviour
     public Transform cam;
     public GameObject camObj;
     public GameObject player;
+    
     private Vector3 distance;
     public Vector3 offset;
     

@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Script/OptionsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/SizeBar.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -35,6 +36,14 @@
   }
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../TestBuild/GGJ 2023 - Roots of Hell.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\vdena\OneDrive\Bureau\TestBuild" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath &quot;C:\Users\vdena\OneDrive\Bureau\GGJ2023\GGJ2023\GGJ 2023 - Roots of Hell&quot; -debugCodeOptimization" />
@@ -80,7 +89,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675196984707</updated>
-      <workItem from="1675196989831" duration="6330000" />
+      <workItem from="1675196989831" duration="8887000" />
+      <workItem from="1675289322408" duration="1361000" />
+      <workItem from="1675445024464" duration="47000" />
+      <workItem from="1675445084170" duration="5813000" />
+      <workItem from="1675577569279" duration="11917000" />
+      <workItem from="1675612109069" duration="733000" />
     </task>
     <servers />
   </component>
