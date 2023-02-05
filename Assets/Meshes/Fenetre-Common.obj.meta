@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b19c2c5e91beac418c7864ad0bc0488
+guid: 7343286c0bf4ccc488859b9da2da6988
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: pSphere2Mat
-    second: {fileID: 2100000, guid: db863306d8f9da546856355d1486ffa9, type: 2}
+      name: modelPanel4ViewSelectedSet_pCube7Mat
+    second: {fileID: 2100000, guid: c2ce4267a628d8f499220463a6a1795c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 9b19c2c5e91beac418c7864ad0bc0488
+guid: 43987137f45090e44be5717c93a3cede
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: pSphere2Mat
-    second: {fileID: 2100000, guid: db863306d8f9da546856355d1486ffa9, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
