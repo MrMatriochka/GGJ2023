@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 943934776426142616}
   - component: {fileID: 4178531015380453971}
   - component: {fileID: 5146031645355900749}
+  - component: {fileID: 345772370311946085}
   m_Layer: 0
   m_Name: pCube14
   m_TagString: Untagged
@@ -83,6 +84,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!208 &345772370311946085
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793269061028700232}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 5.839, y: 4.308, z: 3.8620002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.67800003, y: 4.295, z: 0.57100004}
+  m_TimeToStationary: 0.5
 --- !u!1 &1878710915588823602
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,6 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1250124049873518728}
+  - component: {fileID: 644113447035065189}
   m_Layer: 0
   m_Name: Maison
   m_TagString: Untagged
@@ -133,6 +151,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &644113447035065189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878710915588823602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.672394, y: 8.498661, z: 7.347416}
+  m_Center: {x: -0.6067352, y: 4.3093967, z: 0.435606}
 --- !u!1 &6536206659378148664
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1878861551831603373}
+  - component: {fileID: 7203440396226141023}
   m_Layer: 0
   m_Name: Parlement
   m_TagString: Untagged
@@ -46,6 +47,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7203440396226141023
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805844439684724511}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.96701, y: 7.3880644, z: 10.108902}
+  m_Center: {x: 7.7090607, y: 1.0252447, z: 3.3714828}
 --- !u!1001 &576890490747049888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -426,6 +440,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2330054392771312204}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9010899902541333819 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6727007405964328823, guid: 9b19c2c5e91beac418c7864ad0bc0488,
+    type: 3}
+  m_PrefabInstance: {fileID: 2330054392771312204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &7201499543836198381
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9010899902541333819}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 10.272, y: 3.778, z: 5.525}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 3.4850001, z: 1.1420001}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2641076837432875247
 PrefabInstance:
   m_ObjectHideFlags: 0
