@@ -8,6 +8,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Script/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/OptionsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/SizeBar.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -94,7 +95,7 @@
       <workItem from="1675445024464" duration="47000" />
       <workItem from="1675445084170" duration="5813000" />
       <workItem from="1675577569279" duration="11917000" />
-      <workItem from="1675612109069" duration="733000" />
+      <workItem from="1675612109069" duration="6693000" />
     </task>
     <servers />
   </component>

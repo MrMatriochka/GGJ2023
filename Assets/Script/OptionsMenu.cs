@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class OptionsMenu : MonoBehaviour
 {
@@ -36,11 +37,10 @@ public class OptionsMenu : MonoBehaviour
     }
     public void Save()
     {
-        Time.timeScale = 1;
-
         //volume
         float volumeValue = volumeSlider.value;
         PlayerPrefs.SetFloat("VolumeValue", volumeValue);
+        AudioListener.volume = volumeValue/10;
 
         //Quality
         int qualityIndex = qualityDropdown.value;
@@ -70,18 +70,22 @@ public class OptionsMenu : MonoBehaviour
         // LoadFullscreen();
         Debug.Log(isFullscreen);
         Debug.Log(Screen.fullScreen);
+    }
+
+    public void ClosedOptionInMainMenuScene()
+    {
+        Time.timeScale = 1;
         optionsPanel.SetActive(false);
-        
     }
     public void VolumeSlider()
     {
-        volumeTMPUi.text = volumeSlider.value.ToString("0.0");
+        volumeTMPUi.text = volumeSlider.value.ToString("0");
     }
     public void LoadVolumeValues()
     {
         float volumeValue = PlayerPrefs.GetFloat("VolumeValue");
         volumeSlider.value = volumeValue;
-        AudioListener.volume = volumeValue;
+        //AudioListener.volume = volumeValue/10;
     }
     public void LoadQuality()
     {
@@ -100,7 +104,6 @@ public class OptionsMenu : MonoBehaviour
             toggleFullscreen.isOn = false;
         }
     }
-
     public void LoadRes()
     {
         resolutions = Screen.resolutions;
