@@ -20,6 +20,8 @@ public class Peon : MonoBehaviour
     NavMeshAgent agent;
     Animator animator;
 
+    bool colidedMiniPlayer;
+    MiniPlayer miniPlayer;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -65,18 +67,32 @@ public class Peon : MonoBehaviour
     {
         if(other.CompareTag("Player") || other.CompareTag("MiniPlayer"))
         {
-            player = other.GetComponent<Player>();
+            if(other.CompareTag("MiniPlayer"))
+            {
+                colidedMiniPlayer = true;
+                miniPlayer = other.GetComponent<MiniPlayer>();
+            }
+            
             GetComponent<Renderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
             transform.GetChild(0).gameObject.SetActive(false);
             transform.parent = other.transform;
-            //StartCoroutine(Gangraine());
+
+
+            StartCoroutine(Gangraine());
         }
     }
 
     IEnumerator Gangraine()
     {
-        yield return new WaitForSeconds(baseDeathTime/player.gangraine);
+        if(colidedMiniPlayer)
+        {
+            yield return new WaitForSeconds(baseDeathTime / miniPlayer.nerfedGangraine);
+        }
+        else
+        {
+            yield return new WaitForSeconds(baseDeathTime / player.nerfedGangraine);
+        }
         Destroy(gameObject);
         yield return null;
     }

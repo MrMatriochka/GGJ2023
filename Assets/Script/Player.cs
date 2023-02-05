@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float size;
-    public float gangraine;
+    [HideInInspector] public float size;
+    [Min(0)]public float sizeInclinaison;
+    [Min(1)] public float sizeMax =1;
+    [HideInInspector] public float gangraine;
+    
+    [Min(0)] public float gragnaineFirstInclinaison;
+    [Range(0,1)] public float gragnaineSecondInclinaison;
+    [HideInInspector] public float nerfGangraine;
+    [Min(0)] public float nerfGangraineInclinaison;
+    [Min(1)] public float nerfGangraineMax;
+    [HideInInspector] public float nerfedGangraine;
+    [Min(1)] public float nerfPower;
+    float elapsedTime;
 
     public float speed;
     Rigidbody rb;
@@ -29,9 +40,22 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+        elapsedTime += Time.deltaTime;
+
+        //Get size
         size = transform.childCount;
-        gangraine = transform.childCount;
-        transform.localScale = Vector3.one * (size+1);
+        transform.localScale = Vector3.one * ((sizeInclinaison * Mathf.Log((size + 2)* sizeMax)  ) + 1);
+
+
+        //Get nerfGangraine
+        nerfGangraine = (nerfGangraineInclinaison * Mathf.Log((size + 2) * nerfGangraineMax))+1;
+        
+        //Get Gangraine with time
+        gangraine = Mathf.Pow(gragnaineFirstInclinaison+1,elapsedTime* gragnaineSecondInclinaison)+1;
+
+        //Get NerfedGangraine
+        nerfedGangraine = gangraine / (nerfGangraine*nerfPower);
+
         sizeBar.SetSize(size);
 
         //slingShot
@@ -56,6 +80,15 @@ public class Player : MonoBehaviour
                 Vector3 movement = new Vector3(startSlingshot.x - endSlingshot.x, 0.0f, startSlingshot.y - endSlingshot.y);
 
                 GameObject splitedObject = Instantiate(miniPlayer,transform.position,Quaternion.identity);
+
+                splitedObject.GetComponent<MiniPlayer>().sizeInclinaison = sizeInclinaison;
+                splitedObject.GetComponent<MiniPlayer>().sizeMax = sizeMax;
+                splitedObject.GetComponent<MiniPlayer>().gragnaineFirstInclinaison = gragnaineFirstInclinaison;
+                splitedObject.GetComponent<MiniPlayer>().gragnaineSecondInclinaison = gragnaineSecondInclinaison;
+                splitedObject.GetComponent<MiniPlayer>().nerfGangraineInclinaison = nerfGangraineInclinaison;
+                splitedObject.GetComponent<MiniPlayer>().nerfGangraineMax = nerfGangraineMax;
+                splitedObject.GetComponent<MiniPlayer>().nerfPower = nerfPower;
+
                 splitedObject.GetComponent<Rigidbody>().AddForce(movement * speed);
                 splitedObject.GetComponent<MiniPlayer>().index = miniPlayerIndex;
                 miniPlayerIndex++;
@@ -78,4 +111,6 @@ public class Player : MonoBehaviour
 
         rb.AddForce(movement * speed);
     }
+
+
 }

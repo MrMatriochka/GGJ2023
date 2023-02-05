@@ -4,8 +4,19 @@ using UnityEngine;
 
 public class MiniPlayer : MonoBehaviour
 {
-    public float size;
-    public float gangraine;
+    [HideInInspector] public float size;
+    [Min(0)] public float sizeInclinaison;
+    [Min(1)] public float sizeMax = 1;
+    [HideInInspector] public float gangraine;
+
+    [Min(0)] public float gragnaineFirstInclinaison;
+    [Range(0, 1)] public float gragnaineSecondInclinaison;
+    [HideInInspector] public float nerfGangraine;
+    [Min(0)] public float nerfGangraineInclinaison;
+    [Min(1)] public float nerfGangraineMax;
+    [HideInInspector] public float nerfedGangraine;
+    public float nerfPower;
+    float elapsedTime;
 
     public float speed;
     Rigidbody rb;
@@ -16,22 +27,31 @@ public class MiniPlayer : MonoBehaviour
     bool canFusion;
     public int index;
 
-    public GameObject sizeBarObj;
     private SizeBar sizeBar;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine(Initialize());
-        sizeBar = sizeBarObj.GetComponent<SizeBar>();
         sizeBar.SetMaxSize(15);
     }
 
     private void Update()
     {
+        elapsedTime += Time.deltaTime;
+
+        //Get size
         size = transform.childCount;
-        gangraine = transform.childCount;
-        transform.localScale = Vector3.one * size;
-        sizeBar.SetSize(size);
+        transform.localScale = Vector3.one * ((sizeInclinaison * Mathf.Log((size + 2) * sizeMax)) + 1);
+
+
+        //Get nerfGangraine
+        nerfGangraine = (nerfGangraineInclinaison * Mathf.Log((size + 2) * nerfGangraineMax)) + 1;
+
+        //Get Gangraine with time
+        gangraine = Mathf.Pow(gragnaineFirstInclinaison + 1, elapsedTime * gragnaineSecondInclinaison) + 1;
+
+        //Get NerfedGangraine
+        nerfedGangraine = gangraine / (nerfGangraine * nerfPower);
 
         //slingShot
         if (Input.GetMouseButtonDown(0))
