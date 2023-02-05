@@ -26,13 +26,14 @@ public class MiniPlayer : MonoBehaviour
     bool canSlingshot;
     bool canFusion;
     public int index;
-
-    private SizeBar sizeBar;
+    Material mat;
+    public float deathTimer;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         StartCoroutine(Initialize());
-        sizeBar.SetMaxSize(15);
+
+        mat = GetComponent<Renderer>().material;
     }
 
     private void Update()
@@ -49,7 +50,7 @@ public class MiniPlayer : MonoBehaviour
 
         //Get Gangraine with time
         gangraine = Mathf.Pow(gragnaineFirstInclinaison + 1, elapsedTime * gragnaineSecondInclinaison) + 1;
-
+        mat.SetFloat("_Gangraine", gangraine / 500);
         //Get NerfedGangraine
         nerfedGangraine = gangraine / (nerfGangraine * nerfPower);
 
@@ -77,6 +78,12 @@ public class MiniPlayer : MonoBehaviour
             }
             canSlingshot = false;
         }
+
+        if (size == 0)
+        {
+            StartCoroutine(DeathTimer());
+        }
+        else { StopCoroutine(DeathTimer()); }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -85,10 +92,10 @@ public class MiniPlayer : MonoBehaviour
         {
             if (collision.collider.CompareTag("Player"))
             {
-                int iterrationNb = transform.childCount-1;
+                int iterrationNb = transform.childCount;
                 for (int i = 0; i < iterrationNb; i++)
                 {
-                    transform.GetChild(1).parent = collision.collider.transform;
+                    transform.GetChild(0).parent = collision.collider.transform;
                 }
 
                 Destroy(gameObject);
@@ -96,10 +103,10 @@ public class MiniPlayer : MonoBehaviour
 
             if (collision.collider.CompareTag("MiniPlayer") && index > collision.gameObject.GetComponent<MiniPlayer>().index)
             {
-                int iterrationNb = transform.childCount-1;
+                int iterrationNb = transform.childCount;
                 for (int i = 0; i < iterrationNb; i++)
                 {
-                    transform.GetChild(1).parent = collision.collider.transform;
+                    transform.GetChild(0).parent = collision.collider.transform;
                 }
 
                 Destroy(gameObject);
@@ -110,8 +117,15 @@ public class MiniPlayer : MonoBehaviour
 
     IEnumerator Initialize()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.25f);
         canFusion = true;
+        GetComponent<Collider>().enabled = true;
         yield return null;
+    }
+
+    IEnumerator DeathTimer()
+    {
+        yield return new WaitForSeconds(deathTimer);
+        Destroy(gameObject);
     }
 }

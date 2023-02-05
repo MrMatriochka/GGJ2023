@@ -119,7 +119,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 6a17ab91967df5f4a9e73ac5b94908b7, type: 2}
   - {fileID: 2100000, guid: 1de83741188aeda46a97a1ff3aa2ada8, type: 2}
   - {fileID: 2100000, guid: e0637a081fe127548abf87cba21731ff, type: 2}
-  baseDeathTime: 3
+  baseDeathTime: 10
   moveSpeed: 2
   runSpeed: 8
   walkRadius: 10

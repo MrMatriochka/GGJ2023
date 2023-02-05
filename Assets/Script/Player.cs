@@ -30,21 +30,28 @@ public class Player : MonoBehaviour
     
     public GameObject sizeBarObj;
     private SizeBar sizeBar;
-    
+
+    public float smoothResize;
+    Material mat;
+
+    public float deathTimer;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         sizeBar = sizeBarObj.GetComponent<SizeBar>();
         sizeBar.SetMaxSize(15);
+        mat = GetComponent<Renderer>().material;
     }
 
     private void Update()
     {
         elapsedTime += Time.deltaTime;
+        
 
         //Get size
         size = transform.childCount;
-        transform.localScale = Vector3.one * ((sizeInclinaison * Mathf.Log((size + 2)* sizeMax)  ) + 1);
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one * ((sizeInclinaison * Mathf.Log((size + 2) * sizeMax)) + 1), smoothResize);
+        //transform.localScale = Vector3.one * ((sizeInclinaison * Mathf.Log((size + 2)* sizeMax)  ) + 1);
 
 
         //Get nerfGangraine
@@ -52,7 +59,7 @@ public class Player : MonoBehaviour
         
         //Get Gangraine with time
         gangraine = Mathf.Pow(gragnaineFirstInclinaison+1,elapsedTime* gragnaineSecondInclinaison)+1;
-
+        mat.SetFloat("_Gangraine", gangraine/500);
         //Get NerfedGangraine
         nerfedGangraine = gangraine / (nerfGangraine*nerfPower);
 
@@ -74,7 +81,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.Mouse0) )
         {
-            if(transform.childCount > 2 && canSlingshot)
+            if(transform.childCount > 1 && canSlingshot)
             {
                 endSlingshot = Input.mousePosition;
                 Vector3 movement = new Vector3(startSlingshot.x - endSlingshot.x, 0.0f, startSlingshot.y - endSlingshot.y);
@@ -88,18 +95,25 @@ public class Player : MonoBehaviour
                 splitedObject.GetComponent<MiniPlayer>().nerfGangraineInclinaison = nerfGangraineInclinaison;
                 splitedObject.GetComponent<MiniPlayer>().nerfGangraineMax = nerfGangraineMax;
                 splitedObject.GetComponent<MiniPlayer>().nerfPower = nerfPower;
+                splitedObject.GetComponent<MiniPlayer>().deathTimer = deathTimer;
 
                 splitedObject.GetComponent<Rigidbody>().AddForce(movement * speed);
                 splitedObject.GetComponent<MiniPlayer>().index = miniPlayerIndex;
                 miniPlayerIndex++;
 
-                int iterrationNb = Mathf.RoundToInt((transform.childCount-1) / 2);
+                int iterrationNb = Mathf.RoundToInt(transform.childCount / 2);
                 for (int i = 0; i < iterrationNb; i++)
                 {
                     transform.GetChild(1).parent = splitedObject.transform;
                 }
             }
             canSlingshot = false;
+
+            if(size == 0)
+            {
+                StartCoroutine(DeathTimer());
+            }
+            else { StopCoroutine(DeathTimer()); }
         }
     }
     void FixedUpdate()
@@ -112,5 +126,9 @@ public class Player : MonoBehaviour
         rb.AddForce(movement * speed);
     }
 
-
+    IEnumerator DeathTimer()
+    {
+        yield return new WaitForSeconds(deathTimer);
+        print("GameOver");
+    }
 }
