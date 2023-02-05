@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     {
         size = transform.childCount;
         gangraine = transform.childCount;
-        transform.localScale = Vector3.one * size;
+        transform.localScale = Vector3.one * (size+1);
         sizeBar.SetSize(size);
 
         //slingShot
