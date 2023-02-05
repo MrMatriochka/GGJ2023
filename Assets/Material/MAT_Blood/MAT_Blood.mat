@@ -8,7 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: MAT_Blood
-  m_Shader: {fileID: -6465566751694194690, guid: dcd080f42ba67ce43a1e5da7e0b613c4, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: dcd080f42ba67ce43a1e5da7e0b613c4,
+    type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -55,7 +56,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - Color_8C060E2E: {r: 1.39772, g: 1.39772, b: 1.39772, a: 1}
+    - Color_8C060E2E: {r: 2.1185474, g: 0, b: 0, a: 1}
     - Vector2_7AADC812: {r: 0.2, g: -0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &8950750568637334665
