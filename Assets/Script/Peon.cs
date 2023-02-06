@@ -19,7 +19,7 @@ public class Peon : MonoBehaviour
     bool isWandering = true;
     NavMeshAgent agent;
     Animator animator;
-
+    GameObject cam;
     bool colidedMiniPlayer;
     MiniPlayer miniPlayer;
     public GameObject vfx;
@@ -30,7 +30,7 @@ public class Peon : MonoBehaviour
         animator = transform.GetChild(0).GetComponent<Animator>();
         agent.speed = moveSpeed;
         agent.SetDestination(RandomNavMeshLocation());
-
+        cam = GameObject.FindGameObjectWithTag("MainCamera");
         transform.GetChild(0).GetChild(0).GetComponent<Renderer>().material = matList[Random.Range(0,matList.Count)];
     }
 
@@ -73,7 +73,7 @@ public class Peon : MonoBehaviour
                 colidedMiniPlayer = true;
                 miniPlayer = other.GetComponent<MiniPlayer>();
             }
-            
+            StartCoroutine(cam.GetComponent<CameraController>().Shake(1, 0.1f));
             GetComponent<Renderer>().enabled = false;
             GetComponent<Collider>().enabled = false;
             transform.GetChild(0).gameObject.SetActive(false);

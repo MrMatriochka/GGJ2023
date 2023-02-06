@@ -26,10 +26,10 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            StartCoroutine(Shake(1,0.1f));
-        }
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    StartCoroutine(Shake(1, 0.1f));
+        //}
     }
     private void LateUpdate()
     {

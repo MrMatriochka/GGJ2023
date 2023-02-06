@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1980815213295873326}
   - component: {fileID: 2079218584330707869}
+  - component: {fileID: 1756098549082887647}
   m_Layer: 0
   m_Name: Immeuble 1
   m_TagString: Untagged
@@ -86,6 +87,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.671265, y: 11.988762, z: 10.810478}
   m_Center: {x: 0.015655518, y: 5.9637337, z: -0.12429428}
+--- !u!114 &1756098549082887647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168284282792245140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d473f9e0b9a63b42bfc671982992dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeToDestroy: -1
+  isBuilding: 1
+  isCar: 0
+  duration: 0.2
+  vfxBig: {fileID: 355885988692036311, guid: 05e155e409ef3d94dabf90ade0a94169, type: 3}
+  vfx: {fileID: 355885988692036311, guid: 34bc9273749bffd4d88531d0b2ea760f, type: 3}
 --- !u!1001 &854649231322185715
 PrefabInstance:
   m_ObjectHideFlags: 0

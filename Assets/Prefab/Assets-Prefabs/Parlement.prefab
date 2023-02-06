@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1878861551831603373}
   - component: {fileID: 7203440396226141023}
+  - component: {fileID: -511866785310811344}
   m_Layer: 0
   m_Name: Parlement
   m_TagString: Untagged
@@ -60,6 +61,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.96701, y: 7.3880644, z: 10.108902}
   m_Center: {x: 7.7090607, y: 1.0252447, z: 3.3714828}
+--- !u!114 &-511866785310811344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805844439684724511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d473f9e0b9a63b42bfc671982992dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeToDestroy: -1
+  isBuilding: 1
+  isCar: 0
+  duration: 0.2
+  vfxBig: {fileID: 355885988692036311, guid: 05e155e409ef3d94dabf90ade0a94169, type: 3}
+  vfx: {fileID: 355885988692036311, guid: 34bc9273749bffd4d88531d0b2ea760f, type: 3}
 --- !u!1001 &576890490747049888
 PrefabInstance:
   m_ObjectHideFlags: 0

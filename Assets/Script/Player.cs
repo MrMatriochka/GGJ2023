@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     float elapsedTime;
 
     public float speed;
+    public float throwSpeed;
     Rigidbody rb;
 
     Vector3 startSlingshot;
@@ -90,7 +91,7 @@ public class Player : MonoBehaviour
             {
                 endSlingshot = Input.mousePosition;
                 Vector3 movement = new Vector3(startSlingshot.x - endSlingshot.x, 0.0f, startSlingshot.y - endSlingshot.y);
-
+                movement = movement.normalized;
                 GameObject splitedObject = Instantiate(miniPlayer,transform.position,Quaternion.identity);
 
                 splitedObject.GetComponent<MiniPlayer>().sizeInclinaison = sizeInclinaison;
@@ -102,7 +103,7 @@ public class Player : MonoBehaviour
                 splitedObject.GetComponent<MiniPlayer>().nerfPower = nerfPower;
                 splitedObject.GetComponent<MiniPlayer>().deathTimer = deathTimer;
 
-                splitedObject.GetComponent<Rigidbody>().AddForce(movement * speed);
+                splitedObject.GetComponent<Rigidbody>().AddForce(movement * throwSpeed*Time.deltaTime,ForceMode.Impulse);
                 splitedObject.GetComponent<MiniPlayer>().index = miniPlayerIndex;
                 miniPlayerIndex++;
 
@@ -114,12 +115,14 @@ public class Player : MonoBehaviour
             }
             canSlingshot = false;
 
-            if(size == 0)
-            {
-                StartCoroutine(DeathTimer());
-            }
-            else { StopCoroutine(DeathTimer()); }
+            
         }
+
+        if (size == 0)
+        {
+            StartCoroutine(DeathTimer());
+        }
+        else { StopCoroutine(DeathTimer()); }
     }
     void FixedUpdate()
     {
@@ -128,7 +131,7 @@ public class Player : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        rb.AddForce(movement * speed);
+        rb.AddForce(movement * speed*Time.fixedDeltaTime);
     }
 
     IEnumerator DeathTimer()

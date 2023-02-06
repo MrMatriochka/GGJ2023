@@ -110,6 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250124049873518728}
   - component: {fileID: 644113447035065189}
+  - component: {fileID: -3392804807151561360}
   m_Layer: 0
   m_Name: Maison
   m_TagString: Untagged
@@ -164,6 +165,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.672394, y: 8.498661, z: 7.347416}
   m_Center: {x: -0.6067352, y: 4.3093967, z: 0.435606}
+--- !u!114 &-3392804807151561360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878710915588823602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d473f9e0b9a63b42bfc671982992dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sizeToDestroy: -1
+  isBuilding: 1
+  isCar: 0
+  duration: 0.2
+  vfxBig: {fileID: 355885988692036311, guid: 05e155e409ef3d94dabf90ade0a94169, type: 3}
+  vfx: {fileID: 355885988692036311, guid: 34bc9273749bffd4d88531d0b2ea760f, type: 3}
 --- !u!1 &6536206659378148664
 GameObject:
   m_ObjectHideFlags: 0

@@ -128,8 +128,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: 0
+  sizeInclinaison: 1.48
+  sizeMax: 5
   gangraine: 3
-  speed: 10
+  gragnaineFirstInclinaison: 0.49
+  gragnaineSecondInclinaison: 0.557
+  nerfGangraine: 0
+  nerfGangraineInclinaison: 0.46
+  nerfGangraineMax: 1
+  nerfedGangraine: 0
+  nerfPower: 1
+  speed: 600
+  throwSpeed: 6000
   miniPlayer: {fileID: 2994598465157896101, guid: 8260c8bb124508a498bfd432bfc7a0b4,
     type: 3}
-  sizeBarObj: {fileID: 0}
+  sizeBarObj: {fileID: 8728016848869739037, guid: b40da14900dd092469831a85a118dcaa,
+    type: 3}
+  smoothResize: 0.01
+  deathTimer: 5
+  score: 0
+  slider: {fileID: 0}
