@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class Player : MonoBehaviour
     Material mat;
 
     public float deathTimer;
+
+    public float score;
+    public Slider slider;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -60,6 +64,7 @@ public class Player : MonoBehaviour
         //Get Gangraine with time
         gangraine = Mathf.Pow(gragnaineFirstInclinaison+1,elapsedTime* gragnaineSecondInclinaison)+1;
         mat.SetFloat("_Gangraine", gangraine/500);
+        slider.value = gangraine / 500;
         //Get NerfedGangraine
         nerfedGangraine = gangraine / (nerfGangraine*nerfPower);
 

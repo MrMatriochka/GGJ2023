@@ -22,6 +22,7 @@ public class Peon : MonoBehaviour
 
     bool colidedMiniPlayer;
     MiniPlayer miniPlayer;
+    public GameObject vfx;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -77,8 +78,8 @@ public class Peon : MonoBehaviour
             GetComponent<Collider>().enabled = false;
             transform.GetChild(0).gameObject.SetActive(false);
             transform.parent = other.transform;
-
-
+            player.score++;
+            Instantiate(vfx, transform.position, Quaternion.identity);
             StartCoroutine(Gangraine());
         }
     }

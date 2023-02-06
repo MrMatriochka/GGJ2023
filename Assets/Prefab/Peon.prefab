@@ -125,6 +125,7 @@ MonoBehaviour:
   walkRadius: 10
   runDistance: 20
   calmDistance: 100
+  vfx: {fileID: 6272034388021245937, guid: a58b7700301c79f429de964e29229815, type: 3}
 --- !u!195 &3524470010500515688
 NavMeshAgent:
   m_ObjectHideFlags: 0
