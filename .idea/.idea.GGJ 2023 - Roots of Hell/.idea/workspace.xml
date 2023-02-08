@@ -38,7 +38,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../TestBuild/GGJ 2023 - Roots of Hell.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../../GangGraine\GGJ 2023 - Roots of Hell.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="C:\Users\vdena\OneDrive\Bureau\TestBuild" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -96,7 +96,10 @@
       <workItem from="1675445084170" duration="5813000" />
       <workItem from="1675577569279" duration="11917000" />
       <workItem from="1675612109069" duration="8315000" />
-      <workItem from="1675638974794" duration="730000" />
+      <workItem from="1675638974794" duration="1925000" />
+      <workItem from="1675815673469" duration="3849000" />
+      <workItem from="1675827631613" duration="737000" />
+      <workItem from="1675866828665" duration="680000" />
     </task>
     <servers />
   </component>

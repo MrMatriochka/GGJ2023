@@ -141,6 +141,7 @@ MonoBehaviour:
   nerfPower: 0
   speed: 10
   index: 0
+  deathTimer: 0
 --- !u!1001 &655510070143362202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,6 +259,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BarCanvas 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5788332113015659901, guid: a327348b1a90d0b4cb8ecd6847c39395,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8972657895678762693, guid: a327348b1a90d0b4cb8ecd6847c39395,
         type: 3}
       propertyPath: player
@@ -268,10 +274,15 @@ PrefabInstance:
       propertyPath: prefabSlider
       value: 
       objectReference: {fileID: 8475104065767532792}
+    - target: {fileID: 8972657895747144733, guid: a327348b1a90d0b4cb8ecd6847c39395,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8972657896749411353, guid: a327348b1a90d0b4cb8ecd6847c39395,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a327348b1a90d0b4cb8ecd6847c39395, type: 3}

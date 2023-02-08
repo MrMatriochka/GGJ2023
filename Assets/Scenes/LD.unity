@@ -18783,6 +18783,11 @@ PrefabInstance:
       objectReference: {fileID: 763275642}
     - target: {fileID: 2994598465157896122, guid: f49c796cdfd17744b96c8ed5899e941e,
         type: 3}
+      propertyPath: throwSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2994598465157896122, guid: f49c796cdfd17744b96c8ed5899e941e,
+        type: 3}
       propertyPath: playerPrefab
       value: 
       objectReference: {fileID: 2994598465157896101, guid: f49c796cdfd17744b96c8ed5899e941e,

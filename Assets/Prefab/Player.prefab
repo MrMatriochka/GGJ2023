@@ -139,7 +139,7 @@ MonoBehaviour:
   nerfedGangraine: 0
   nerfPower: 1
   speed: 600
-  throwSpeed: 6000
+  throwSpeed: 1000
   miniPlayer: {fileID: 2994598465157896101, guid: 8260c8bb124508a498bfd432bfc7a0b4,
     type: 3}
   sizeBarObj: {fileID: 8728016848869739037, guid: b40da14900dd092469831a85a118dcaa,

@@ -75,6 +75,7 @@ public class OptionsMenu : MonoBehaviour
     public void ClosedOptionInMainMenuScene()
     {
         Time.timeScale = 1;
+        Time.fixedDeltaTime = 0.02f;
         optionsPanel.SetActive(false);
     }
     public void VolumeSlider()
