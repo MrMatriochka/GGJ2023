@@ -7,11 +7,6 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Script/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/OptionsMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/SizeBar.cs" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -99,7 +94,9 @@
       <workItem from="1675638974794" duration="1925000" />
       <workItem from="1675815673469" duration="3849000" />
       <workItem from="1675827631613" duration="737000" />
-      <workItem from="1675866828665" duration="680000" />
+      <workItem from="1675866828665" duration="5440000" />
+      <workItem from="1676054571802" duration="2675000" />
+      <workItem from="1676062519958" duration="661000" />
     </task>
     <servers />
   </component>

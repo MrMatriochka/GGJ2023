@@ -52,7 +52,7 @@ public class Destructible : MonoBehaviour
 
             while (elapsedTime < duration)
             {
-                transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, (1/duration)*Time.deltaTime);
+                transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, (1*duration)*Time.deltaTime);
 
                 elapsedTime += Time.deltaTime;
 

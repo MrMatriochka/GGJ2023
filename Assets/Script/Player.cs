@@ -39,12 +39,12 @@ public class Player : MonoBehaviour
     public float deathTimer;
 
     public float score;
-    public Slider slider;
+    //public Slider slider;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         sizeBar = sizeBarObj.GetComponent<SizeBar>();
-        sizeBar.SetMaxSize(15);
+        sizeBar.SetMaxSize(1);
         mat = GetComponent<Renderer>().material;
     }
 
@@ -65,11 +65,11 @@ public class Player : MonoBehaviour
         //Get Gangraine with time
         gangraine = Mathf.Pow(gragnaineFirstInclinaison+1,elapsedTime* gragnaineSecondInclinaison)+1;
         mat.SetFloat("_Gangraine", gangraine/500);
-        slider.value = gangraine / 500;
+        //slider.value = gangraine / 500;
         //Get NerfedGangraine
         nerfedGangraine = gangraine / (nerfGangraine*nerfPower);
 
-        sizeBar.SetSize(size);
+        sizeBar.SetSize(gangraine/500);
 
         //slingShot
         if (Input.GetMouseButtonDown(0))
